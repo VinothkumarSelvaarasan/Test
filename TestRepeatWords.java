@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -11,7 +8,7 @@ public class TestRepeatWords {
         Map<String, Integer> map = new LinkedHashMap<String, Integer>();
         BufferedReader reader = null;
         try {
-            reader = new BufferedReader(new FileReader("data.txt"));
+            reader = new BufferedReader(new InputStreamReader(System.in));
             String currentLine = reader.readLine();
             while (currentLine!= null) {
                 String[] input = currentLine.replaceAll("[^a-zA-Z]", " ").toLowerCase().split(" ");
